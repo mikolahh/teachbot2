@@ -15,7 +15,7 @@ define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 define("tg_user_id", 1551080903);
 define("apiUrl", "https://api.telegram.org/bot");
 
-$textMessage = "Тестовое сообщение";
+$textMessage = "Text message";
 // Преобразуем обычную строку в специальную кодировку для отправки get-запросом
 $textMessage = urlencode($textMessage);
 var_dump($textMessage);
