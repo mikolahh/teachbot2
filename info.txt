@@ -1,0 +1,6 @@
+
+Ссылка на плейлист от Prog-Time
+
+https://www.youtube.com/playlist?list=PLX0b6DxYL7jCe49XnLFjeiLIgA7LJqD5T
+
+token = '5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg'
