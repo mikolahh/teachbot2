@@ -23,3 +23,15 @@ $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" 
 var_dump($urlQuery);
 echo "<br>";
 echo "hello mikola";
+echo "<br>";
+$user = 'Mikalai Khadanovich';
+echo "$user";
+echo "<br>";
+var_dump($user);
+echo "<br>";
+$user_url = urlencode($user);
+echo "$user_url";
+echo "<br>";
+var_dump($user_url);
+
+
