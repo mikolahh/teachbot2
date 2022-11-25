@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Код для вывлда ошибок
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
@@ -19,5 +19,6 @@ $textMessage = "Тестовое сообщение";
 // Преобразуем обычную строку в специальную кодировку для отправки get-запросом
 $textMessage = urlencode($textMessage);
 // Сформируем переменную с запросом для отправки сообщения
-$urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=". tg_user_id . "&text=" . $textMessage;
+$urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
 var_dump($urlQuery);
+echo 'hello mikola';
