@@ -19,11 +19,17 @@ define("apiUrl", "https://api.telegram.org/bot");
 $textMessage = "Text message";
 // Преобразуем обычную строку в специальную кодировку для отправки get-запросом
 $textMessage = urlencode($textMessage);
-
+echo "<br>";
+// Попробуем сформировать переменную для плучения обновлений от бота
+$getBotUpdate = apiUrl . tg_token . "/getUpdates";
+$lastUpdates = file_get_contents($getBotUpdate);
+echo "Последние обновления: ";
+echo $lastUpdates;
 echo "<br>";
 // Сформируем переменную с запросом для отправки сообщения
 $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
 // var_dump($urlQuery);
 echo "<br>";
 $result = file_get_contents($urlQuery);
-var_dump($result);
+echo "Возвращенный ответ на отправленное сообщение: ";
+echo $result;
