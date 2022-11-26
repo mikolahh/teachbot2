@@ -14,6 +14,7 @@ ini_set('display_startup_errors', 1);
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 define("tg_user_id", 1551080903);
 define("apiUrl", "https://api.telegram.org/bot");
+// ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
 
 $textMessage = "Text message";
 // Преобразуем обычную строку в специальную кодировку для отправки get-запросом
@@ -24,7 +25,6 @@ echo "<br>";
 $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
 // var_dump($urlQuery);
 echo "<br>";
-$result = file_get_contents($urlQuery);
-
-
-
+// $result = file_get_contents($urlQuery);
+$filename = 'info.txt';
+$info = file_get_contents($filename);
