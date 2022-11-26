@@ -16,25 +16,65 @@ define("tg_user_id", 1551080903);
 define("apiUrl", "https://api.telegram.org/bot");
 // ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
 
+// Попробуем сформировать переменную для плучения обновлений от бота
+$getBotUpdate = apiUrl . tg_token . "/getUpdates";
+
+// Получаем обновления от бота через интересную функцию
+$lastUpdates = file_get_contents($getBotUpdate);
+
+// Выводим полученные обновления
+echo "Последние обновления, вывод через вардамп: ";
+var_dump($lastUpdates);
+<br><br><br>
+
+// Вводим переменную для сообщения пользователю
 $textMessage = "Text message";
 // Преобразуем обычную строку в специальную кодировку для отправки get-запросом
 $textMessage = urlencode($textMessage);
-echo "<br>";
-// Попробуем сформировать переменную для плучения обновлений от бота
-$getBotUpdate = apiUrl . tg_token . "/getUpdates";
-$lastUpdates = file_get_contents($getBotUpdate);
-echo "Последние обновления, вывод через эхо: ";
-echo $lastUpdates;
-echo "<br>";
-echo "Последние обновления, вывод через вардамп: ";
-var_dump($lastUpdates);
-// Сформируем переменную с запросом для отправки сообщения
+// Сформируем переменную с запросом для отправки сообщения, включив в нее, кроме самого сообщения
+// еще один обязательный папраметр: chat_id
 $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
-// var_dump($urlQuery);
-echo "<br>";
-$result = file_get_contents($urlQuery);
-echo "Возвращенный ответ на отправленное сообщение через эхо: ";
-echo $result;
-echo "<br>";
-echo "Возвращенный ответ на отправленное сообщение через вардамп: ";
-var_dump($result);
+// Отправлям сообщение пользователю через очень интересную функцию
+// $result = file_get_contents($urlQuery);
+
+// А теперь немного усложняем задачу - будем отправлять сообщение не через "интересную функцию", 
+// а с использованием библиотеки curl, которая позволит нам не лепить строку запроса каждый раз 
+// из параметров, а задавать параметры отдельно в виде массива, добавив один необязательный параметр
+ // parce_mode, который в конечном итоге позволит нам как-то структурировать наше сообщение
+
+
+// Итак, задаем массив с параметрами
+$getQuery = array(
+	"chat_id" => tg_user_id,
+	"text" => "Новое сообщение из <u>формы</u>",
+	"parce_mode" => "html",
+);
+// инициализируем curl, создав переменную ch, curl_init принимает единственный параметр - ссылку, 
+// где функция http_build_query генерирует специальную строку запроса из массива
+$ch = curl_init(apiUrl . tg_token . "/sendMessage?" . http_build_query($getQuery));
+// передаем специальные параметры запроса с помощью функции cutl_setopt
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_HEADER, false);
+
+// делаем запрос с возвращением данных
+$resultQuery = curl_exec($ch);
+//Закрываем соединение 
+curl_close($ch);
+// выводим результат возвращаемый
+echo "Выводим результат запроса: ";
+echo $resultQuery;
+
+
+
+
+
+ 
+
+
+
+
+
+
+// echo "<br>";
+
