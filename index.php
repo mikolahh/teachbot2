@@ -68,6 +68,7 @@ $resultQuery = curl_exec($ch);
 curl_close($ch);
 // выводим результат возвращаемый
 echo "Выводим результат запроса: ";
+echo "<br>";
 echo $resultQuery;
 
 
