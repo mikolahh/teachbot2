@@ -29,12 +29,12 @@ echo '<br><br><br>';
 
 
 // Вводим переменную для сообщения пользователю
-$textMessage = "Text message";
+// $textMessage = "Text message";
 // Преобразуем обычную строку в специальную кодировку для отправки get-запросом
-$textMessage = urlencode($textMessage);
+// $textMessage = urlencode($textMessage);
 // Сформируем переменную с запросом для отправки сообщения, включив в нее, кроме самого сообщения
 // еще один обязательный папраметр: chat_id
-$urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
+// $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
 // Отправлям сообщение пользователю через очень интересную функцию
 // $result = file_get_contents($urlQuery);
 
@@ -44,10 +44,14 @@ $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" 
 // parce_mode, который в конечном итоге позволит нам как-то структурировать наше сообщение
 
 
-// Итак, задаем массив с параметрами
+// Итак, задаем массив с параметрами, текст сообщения зададим отдельно и тремя строками
+$textMessage = "Строка <u>1</u>";
+$textMessage = "Строка <u>2</u>";
+$textMessage = "Строка <u>3</u>";
+
 $getQuery = array(
 	"chat_id" => tg_user_id,
-	"text" => "Новое сообщение из <i>формы</i>",
+	"text" => $textMessage,
 	"parse_mode" => "html",
 );
 // инициализируем curl, создав переменную ch, curl_init принимает единственный параметр - ссылку, 
@@ -65,6 +69,7 @@ curl_close($ch);
 // выводим результат возвращаемый
 echo "Выводим результат запроса: ";
 echo $resultQuery;
+
 
 
 
