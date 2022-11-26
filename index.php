@@ -14,8 +14,6 @@ ini_set('display_startup_errors', 1);
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 define("tg_user_id", 1551080903);
 define("apiUrl", "https://api.telegram.org/bot");
-// ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
-
 // Попробуем сформировать переменную для плучения обновлений от бота
 $getBotUpdate = apiUrl . tg_token . "/getUpdates";
 
@@ -69,7 +67,11 @@ curl_close($ch);
 // выводим результат возвращаемый
 echo "Выводим результат запроса: ";
 echo "<br>";
+echo "<pre>";
 print_r($resultQuery);
+echo "</pre>";
+
+// ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
 
 
 
