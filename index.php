@@ -23,13 +23,18 @@ echo "<br>";
 // Попробуем сформировать переменную для плучения обновлений от бота
 $getBotUpdate = apiUrl . tg_token . "/getUpdates";
 $lastUpdates = file_get_contents($getBotUpdate);
-echo "Последние обновления: ";
+echo "Последние обновления, вывод через эхо: ";
 echo $lastUpdates;
 echo "<br>";
+echo "Последние обновления, вывод через вардамп: ";
+var_dump($lastUpdates);
 // Сформируем переменную с запросом для отправки сообщения
 $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
 // var_dump($urlQuery);
 echo "<br>";
 $result = file_get_contents($urlQuery);
-echo "Возвращенный ответ на отправленное сообщение: ";
+echo "Возвращенный ответ на отправленное сообщение через эхо: ";
 echo $result;
+echo "<br>";
+echo "Возвращенный ответ на отправленное сообщение через вардамп: ";
+var_dump($result);
