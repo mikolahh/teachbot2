@@ -47,8 +47,8 @@ $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" 
 // Итак, задаем массив с параметрами
 $getQuery = array(
 	"chat_id" => tg_user_id,
-	"text" => "Новое сообщение из <b>формы</b>",
-	"parce_mode" => "html",
+	"text" => "Новое сообщение из <i>формы</i>",
+	"parse_mode" => "html",
 );
 // инициализируем curl, создав переменную ch, curl_init принимает единственный параметр - ссылку, 
 // где функция http_build_query генерирует специальную строку запроса из массива
