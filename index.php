@@ -26,4 +26,4 @@ $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" 
 // var_dump($urlQuery);
 echo "<br>";
 $result = file_get_contents($urlQuery);
-// var_dump($result);
+var_dump($result);
