@@ -23,8 +23,6 @@ $textMessage = urlencode($textMessage);
 echo "<br>";
 // Сформируем переменную с запросом для отправки сообщения
 $urlQuery = apiUrl . tg_token . "/sendMessage?chat_id=" . tg_user_id . "&text=" . $textMessage;
-// var_dump($urlQuery);
+var_dump($urlQuery);
 echo "<br>";
 // $result = file_get_contents($urlQuery);
-$filename = 'info.txt';
-$info = file_get_contents($filename);
