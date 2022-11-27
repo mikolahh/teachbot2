@@ -69,11 +69,12 @@ curl_setopt($ch, CURLOPT_HEADER, false);
 
 // делаем запрос с возвращением данных
 $resultQuery = curl_exec($ch);
+$resultOutput = json_decode($resultQuery);
 //Закрываем соединение 
 curl_close($ch);
 // выводим результат возвращаемый
 echo "Выводим результат запроса: ";
-prv($resultQuery);
+prv($resultOutput);
 
 // ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
 
