@@ -30,7 +30,7 @@ echo "Последние обновления, вывод через нашу с
 prv(json_decode($lastUpdates, true));
 
 // вводим переменную с телом сообщения
-$textMessage = 'А теперь сообщение с кнопками!';
+$textMessage = 'А теперь должно быть сообщение только с инлайн кнопками!';
 
 // Массив для передачи параметров в сообщение
 $getQuery = array(
@@ -44,10 +44,10 @@ $getQuery = array(
 				array(array('text' => '7', 'callback_data' => 'key7'), array('text' => '8', 'callback_data' => 'key8'), array('text' => '9', 'callback_data' => 'key9')),
 				array(array('text' => '*', 'callback_data' => 'key*'), array('text' => '0', 'callback_data' => 'key0'), array('text' => '#', 'callback_data' => 'key#'))
 			),
-			'keyboard' => array(
+			/*'keyboard' => array(
 				array(array('text' => 'Действие1', 'callback_data' => 'do-1'), array('text' => 'Действие1', 'callback_data' => 'do-1')),
 				array(array('text' => 'Действие1', 'callback_data' => 'do-1'), array('text' => 'Действие1', 'callback_data' => 'do-1'))
-			)
+			)*/
 		)
 	)
 );
