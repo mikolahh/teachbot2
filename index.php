@@ -35,13 +35,14 @@ $textMessage = 'Да, я бот хозяина, и я снова с вами!';
 // Массив для передачи параметров в сообщение
 $getQuery = array(
    "chat_id" => tg_user_id,
-   "text" => $textMessage,
-   "parse_mode" => "html",
+   // "text" => $textMessage,
+   // "parse_mode" => "html",
+   "message_id" => 60,
    // а теперь наше соообщение будет не просто в группу, а в ответ на другое сообщение
-   "reply_to_message_id" => 59
+   // "reply_to_message_id" => 59
 );
 // формируем шаблон строки запроса на передачу сообщения
-$ch = curl_init(apiUrl . tg_token . "/sendMessage?" . http_build_query($getQuery));
+$ch = curl_init(apiUrl . tg_token . "/deleteMessage?" . http_build_query($getQuery));
 // передаем специальные параметры запроса с помощью функции cutl_setopt
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
