@@ -37,6 +37,8 @@ $getQuery = array(
    "chat_id" => tg_user_id,
    "text" => $textMessage,
    "parse_mode" => "html",
+   // а теперь наше соообщение будет не просто в группу, а в ответ на другое сообщение
+   "reply_to_message_id" => 59
 );
 // формируем шаблон строки запроса на передачу сообщения
 $ch = curl_init(apiUrl . tg_token . "/sendMessage?" . http_build_query($getQuery));
