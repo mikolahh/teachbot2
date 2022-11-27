@@ -17,7 +17,7 @@ function prv($var)
 }
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 // здесь может быть как id отдельного пользователя, так и группы, куда будет отправляться сообщение
-define("tg_user_id", -890207934);
+define("tg_user_id", -881391231);
 define("apiUrl", "https://api.telegram.org/bot");
 // Попробуем сформировать переменную для плучения обновлений от бота
 $getBotUpdate = apiUrl . tg_token . "/getUpdates";
@@ -30,7 +30,7 @@ echo "Последние обновления, вывод через нашу с
 prv(json_decode($lastUpdates, true));
 
 // вводим переменную с телом сообщения
-$textMessage = 'Очередное тестовое сообщение из урока №3';
+$textMessage = 'Очередное тестовое сообщение в группу из урока №3';
 
 // Массив для передачи параметров в сообщение
 $getQuery = array(
