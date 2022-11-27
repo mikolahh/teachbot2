@@ -22,7 +22,8 @@ function prv($var)
 // https://api.telegram.org/bot5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg/getUpdates , далее перейдя по этой ссылке мы и 
 // можем узнать в числе прочего и юзер айди этого пользователя
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
-define("tg_user_id", 1551080903);
+// здесь может быть как id отдельного пользователя, так и группы, куда будет отправляться сообщение
+define("tg_user_id", -890207934);
 define("apiUrl", "https://api.telegram.org/bot");
 // Попробуем сформировать переменную для плучения обновлений от бота
 $getBotUpdate = apiUrl . tg_token . "/getUpdates";
@@ -54,9 +55,9 @@ prv(json_decode($lastUpdates, true));
 
 
 // Итак, задаем массив с параметрами, текст сообщения зададим отдельно и тремя строками, надо обратить внимание, такой вот интересный способ конкатенации
-$textMessage = "Строка <u>1</u> \n";
-$textMessage .= "Строка <u>2</u> \n";
-$textMessage .= "Строка <u>3</u>";
+$textMessage = "<b>Привет, группа моего хозяина! </b>\n";
+$textMessage .= "<i>Я бот! Будем знакомы!</i>\n";
+$textMessage .= "<u>Всем спасибо, все свободны!</u>";
 
 $getQuery = array(
 	"chat_id" => tg_user_id,
