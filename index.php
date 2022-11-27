@@ -3,10 +3,12 @@
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-function vardump($var) {
-  echo '<pre>';
-  var_dump($var);
-  echo '</pre>';
+function prv($var) {
+    static $int=0;
+    echo '<pre><b style="background: blue;padding: 1px 5px;">'.$int.'</b> ';
+    var_dump($var);
+    echo '</pre>';
+    $int++;
 }
 
 // https://api.telegram.org/bot5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg/getUpdates
@@ -71,7 +73,7 @@ $resultQuery = curl_exec($ch);
 curl_close($ch);
 // выводим результат возвращаемый
 echo "Выводим результат запроса: ";
-vardump($resultQuery);
+prv($resultQuery);
 
 // ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
 
