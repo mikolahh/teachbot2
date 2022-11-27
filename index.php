@@ -43,7 +43,11 @@ $getQuery = array(
    				array(array('text'=>'4','callback_data'=>'key4'),array('text'=>'5','callback_data'=>'key5'),array('text'=>'6','callback_data'=>'key6')),
    				array(array('text'=>'7','callback_data'=>'key7'),array('text'=>'8','callback_data'=>'key8'),array('text'=>'9','callback_data'=>'key9')),
    				array(array('text'=>'*','callback_data'=>'key*'),array('text'=>'0','callback_data'=>'key0'),array('text'=>'#','callback_data'=>'key#'))
-   			)
+   			),
+   			'keyboard' => array(
+   				array('text'=>'Действие1','callback_data'=>'do-1'),array('text'=>'Действие2','callback_data'=>'do-2'),
+   				array('text'=>'Действие3','callback_data'=>'do-3'),array('text'=>'Действие4','callback_data'=>'do-4')
+   				)
    		)
    )    
 );
