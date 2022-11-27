@@ -32,8 +32,8 @@ $lastUpdates = file_get_contents($getBotUpdate);
 
 // Выводим полученные обновления
 echo "Последние обновления, вывод через нашу специальную функцию: ";
-// prv($lastUpdates);
-prev(json_decode($lastUpdates));
+
+prv(json_decode($lastUpdates));
 
 
 
