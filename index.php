@@ -70,7 +70,7 @@ curl_setopt($ch, CURLOPT_HEADER, false);
 
 // делаем запрос с возвращением данных
 $resultQuery = curl_exec($ch);
-$resultOutput = json_decode($resultQuery);
+$resultOutput = json_decode($resultQuery, true);
 //Закрываем соединение 
 curl_close($ch);
 // выводим результат возвращаемый
