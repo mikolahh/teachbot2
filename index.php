@@ -31,7 +31,7 @@ prv(json_decode($lastUpdates, true));
 $arrayQuery = array(
     'chat_id' => tg_user_id,
     'caption' => 'Проверка работы',
-    'photo' => curl_file_create(__DIR__ . '/my_photo.jpg', 'image/jpg' , 'my_photo.jpg')
+    'photo' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg' , 'diplom.jpg')
 );		
 $ch = curl_init(apiUrl . tg_token .'/sendPhoto');
 curl_setopt($ch, CURLOPT_POST, 1);
