@@ -33,7 +33,7 @@ $arrayQuery = array(
     'caption' => 'Проверка работы',
     'photo' => curl_file_create(__DIR__ . '/my_photo.jpg', 'image/jpg' , 'my_photo.jpg')
 );		
-$ch = curl_init(apiUrl . $token .'/sendPhoto');
+$ch = curl_init(apiUrl . tg_token .'/sendPhoto');
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $arrayQuery);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
