@@ -3,6 +3,11 @@
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+function vardump($var) {
+  echo '<pre>';
+  var_dump($var);
+  echo '</pre>';
+}
 
 // https://api.telegram.org/bot5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg/getUpdates
 
@@ -66,10 +71,7 @@ $resultQuery = curl_exec($ch);
 curl_close($ch);
 // выводим результат возвращаемый
 echo "Выводим результат запроса: ";
-echo "<br>";
-echo "<pre>";
-print_r($resultQuery);
-echo "</pre>";
+vardump($resultQuery);
 
 // ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
 
