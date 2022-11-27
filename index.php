@@ -30,19 +30,25 @@ echo "Последние обновления, вывод через нашу с
 prv(json_decode($lastUpdates, true));
 
 // вводим переменную с телом сообщения
-$textMessage = 'Да, я бот хозяина, и я снова с вами!';
+$textMessage = 'А теперь сообщение с кнопками!';
 
 // Массив для передачи параметров в сообщение
 $getQuery = array(
    "chat_id" => tg_user_id,
-   // "text" => $textMessage,
-   // "parse_mode" => "html",
-   "message_id" => 60,
-   // а теперь наше соообщение будет не просто в группу, а в ответ на другое сообщение
-   // "reply_to_message_id" => 59
+   "text" => $textMessage,
+   "reply_markup" => json_encode(
+   		array(
+   			'inline_keyboard' => array(
+   				array(array('text'=>'1','callback_data'=>'key1'),array('text'=>'2','callback_data'=>'key2'),array('text'=>'3','callback_data'=>'key3')),
+   				array(array('text'=>'4','callback_data'=>'key4'),array('text'=>'5','callback_data'=>'key5'),array('text'=>'6','callback_data'=>'key6')),
+   				array(array('text'=>'7','callback_data'=>'key7'),array('text'=>'8','callback_data'=>'key8'),array('text'=>'9','callback_data'=>'key9')),
+   				array(array('text'=>'*','callback_data'=>'key*'),array('text'=>'0','callback_data'=>'key0'),array('text'=>'#','callback_data'=>'key#'))
+   			)
+   		)
+   )    
 );
 // формируем шаблон строки запроса на передачу сообщения
-$ch = curl_init(apiUrl . tg_token . "/deleteMessage?" . http_build_query($getQuery));
+$ch = curl_init(apiUrl . tg_token . "/sendMessage?" . http_build_query($getQuery));
 // передаем специальные параметры запроса с помощью функции cutl_setopt
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
