@@ -82,7 +82,7 @@ echo "Выводим результат запроса: ";
 prv($resultOutput);
 // prv($resultQuery);
 
-// ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
+// ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
 
 
 

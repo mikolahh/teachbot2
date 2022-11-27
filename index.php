@@ -22,14 +22,14 @@ define("apiUrl", "https://api.telegram.org/bot");
 $getBotUpdate = apiUrl . tg_token . "/getUpdates";
 
 // Получаем обновления от бота через интересную функцию
-$lastUpdates = file_get_contents($getBotUpdate);
+// $lastUpdates = file_get_contents($getBotUpdate);
 
 // Выводим полученные обновления
 echo "Последние обновления, вывод через нашу специальную функцию: ";
 prv(json_decode($lastUpdates, true));
 
 // вводим переменную с телом сообщения
-$textMessage = 'Очередное тестовое сообщение';
+$textMessage = 'Очередное тестовое сообщение из урока №3';
 
 // Массив для передачи параметров в сообщение
 $getQuery = array(
