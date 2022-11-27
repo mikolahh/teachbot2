@@ -79,7 +79,7 @@ $resultOutput = json_decode($resultQuery, true);
 curl_close($ch);
 // выводим результат возвращаемый
 echo "Выводим результат запроса: ";
-prv($resultOutput['result']['chat']['username']);
+prv($resultOutput);
 // prv($resultQuery);
 
 // ssh mikalayt@vh116.hoster.by -p 22          ew8nieKo
