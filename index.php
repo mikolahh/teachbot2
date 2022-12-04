@@ -35,15 +35,11 @@ define("botUrl", "https://mikalay.tech/bot/index.php");
 
 // Для записи строки будем использовать дополнительную, самописную функцию writeLogFile()
 // функция принимает 2 параметра: первый параметр, строка для записи. В нашем случае это JSON строка. второй параметр используется для очистки файла и перезаписи. Если данный параметр имеет значение false, то в файл дописывается информация.
-function writeLogFile($string, $clear = false)
+function writeLogFile($string)
 {
    $log_file_name = __DIR__ . "/message.txt";
-   if ($clear == false) {
-      file_put_contents($log_file_name,  print_r($string, true) . "\r\n", FILE_APPEND);
-   } else {
-      file_put_contents($log_file_name, '');
-      file_put_contents($log_file_name,  print_r($string, true) . "\r\n", FILE_APPEND);
-   }
+   $now = date("Y-m-d H:i:s");
+   file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
 }
 // Теперь отлавливаем данные
 $data = file_get_contents('php://input');
