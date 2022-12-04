@@ -26,7 +26,7 @@ define("botUrl", "https://mikalay.tech/bot/index.php");
 // $data = file_get_contents('php://input');
 // А теперь преобразуем json-строку в ассоциативный массив
 // $data = json_decode($data, true);
- // если бы второй параметр был false, мы бы получили объект
+// если бы второй параметр был false, мы бы получили объект
 
 // А теперь попробуем красиво вывести данные с сообщением боту
 // prv($data); и у нас ничего не выходит, так как данные, которые мы пытаемся отловить сразу же уходят в пустоту
@@ -35,23 +35,24 @@ define("botUrl", "https://mikalay.tech/bot/index.php");
 
 // Для записи строки будем использовать дополнительную, самописную функцию writeLogFile()
 // функция принимает 2 параметра: первый параметр, строка для записи. В нашем случае это JSON строка. второй параметр используется для очистки файла и перезаписи. Если данный параметр имеет значение false, то в файл дописывается информация.
-function writeLogFile($string, $clear = false){
-    $log_file_name = __DIR__."/message.txt";
-    if($clear == false) {
-	$now = date("Y-m-d H:i:s");
-	file_put_contents($log_file_name, $now." ".print_r($string, true)."\r\n", FILE_APPEND);
-    }
-    else {
-	file_put_contents($log_file_name, '');
-        file_put_contents($log_file_name, $now." ".print_r($string, true)."\r\n", FILE_APPEND);
-    }
+function writeLogFile($string, $clear = false)
+{
+   $log_file_name = __DIR__ . "/message.txt";
+   if ($clear == false) {
+      $now = date("Y-m-d H:i:s");
+      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+   } else {
+      $now = date("Y-m-d H:i:s");
+      file_put_contents($log_file_name, '');
+      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+   }
 }
 // Теперь отлавливаем данные
 $data = file_get_contents('php://input');
 // И сразу записываем полученные данные в файл
 writeLogFile($data, true);
 // И только теперь, уже из файла, выведем полученную информацию на страницу
-echo file_get_contents(__DIR__."/message.txt");
+echo file_get_contents(__DIR__ . "/message.txt");
 
 
 
