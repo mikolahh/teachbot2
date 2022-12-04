@@ -50,6 +50,8 @@ function writeLogFile($string, $clear = false)
 }
 // Теперь отлавливаем данные
 $data = file_get_contents('php://input');
+// А теперь преобразуем json-строку в ассоциативный массив
+$data = json_decode($data, true);
 // И сразу записываем полученные данные в файл
 writeLogFile($data);
 // И только теперь, уже из файла, выведем полученную информацию на страницу
