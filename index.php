@@ -39,11 +39,10 @@ define("botUrl", "https://bot.mikalay.tech/index.php");
 function writeLogFile($string, $clear = false)
 {
    $log_file_name = __DIR__ . "/message.txt";
+   $now = date("Y-m-d H:i:s");
    if ($clear == false) {
-      $now = date("Y-m-d H:i:s");
       file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
    } else {
-      $now = date("Y-m-d H:i:s");
       file_put_contents($log_file_name, '');
       file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
    }
@@ -51,7 +50,7 @@ function writeLogFile($string, $clear = false)
 // Теперь отлавливаем данные
 $data = file_get_contents('php://input');
 // А теперь преобразуем json-строку в ассоциативный массив
-$data = json_decode($data, true);
+$data = json_decode($data);
 // И сразу записываем полученные данные в файл
 writeLogFile($data);
 // И только теперь, уже из файла, выведем полученную информацию на страницу
