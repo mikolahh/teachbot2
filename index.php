@@ -51,7 +51,7 @@ function writeLogFile($string, $clear = false)
 // Теперь отлавливаем данные
 $data = file_get_contents('php://input');
 // И сразу записываем полученные данные в файл
-writeLogFile($data, true);
+writeLogFile($data);
 // И только теперь, уже из файла, выведем полученную информацию на страницу
 echo file_get_contents(__DIR__ . "/message.txt");
 
