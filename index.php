@@ -39,12 +39,10 @@ function writeLogFile($string, $clear = false)
 {
    $log_file_name = __DIR__ . "/message.txt";
    if ($clear == false) {
-      $now = date("Y-m-d H:i:s");
-      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+      file_put_contents($log_file_name,  print_r($string, true) . "\r\n", FILE_APPEND);
    } else {
-      $now = date("Y-m-d H:i:s");
       file_put_contents($log_file_name, '');
-      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+      file_put_contents($log_file_name,  print_r($string, true) . "\r\n", FILE_APPEND);
    }
 }
 // Теперь отлавливаем данные
@@ -62,3 +60,4 @@ echo file_get_contents(__DIR__ . "/message.txt");
 
 
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
+// mikolahh@gmail.com
