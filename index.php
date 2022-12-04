@@ -55,7 +55,8 @@ $data = json_decode($data, true);
 // И сразу записываем полученные данные в файл
 writeLogFile($data);
 // И только теперь, уже из файла, выведем полученную информацию на страницу
-echo file_get_contents(__DIR__ . "/message.txt");
+// echo file_get_contents(__DIR__ . "/message.txt");
+prv(file_get_contents(__DIR__ . "/message.txt"));
 
 
 
