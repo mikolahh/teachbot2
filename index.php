@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Код для вывлда ошибок
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
@@ -29,11 +29,13 @@ echo "Последние обновления, вывод через нашу с
 prv(json_decode($lastUpdates, true));
 
 $arrayQuery = array(
-    'chat_id' => tg_user_id,
-    'caption' => 'Проверка работы',
-    'photo' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg' , 'diplom.jpg')
-);		
-$ch = curl_init(apiUrl . tg_token .'/sendPhoto');
+	'chat_id' => tg_user_id,
+	'caption' => 'Проверка работы',
+	//  'photo' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg' , 'diplom.jpg')
+	'document' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg', 'diplom.jpg')
+);
+// $ch = curl_init(apiUrl . tg_token .'/sendPhoto');
+$ch = curl_init(apiUrl . tg_token . '/sendDcument');
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $arrayQuery);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -45,8 +47,3 @@ prv(json_decode($res, true));
 
 
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
-
-
-
-
-
