@@ -30,9 +30,9 @@ prv(json_decode($lastUpdates, true));
 
 $arrayQuery = array(
 	'chat_id' => tg_user_id,
-	'caption' => 'Проверка работоспособности отправки файлов на этот раз',
+	'caption' => 'Проверка работоспособности отправки файлов с помощью хэша',
 	// 'photo' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg', 'diplom.jpg')
-	'document' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg', 'diplom.jpg')
+	'document' => 'BQACAgIAAxkDAANqY4xZuq6oyos8R08KIhFkkhwh3NUAAmIfAAIotWFIESrkglsYRXwrBA'
 );
 // $ch = curl_init(apiUrl . tg_token . '/sendPhoto');
 $ch = curl_init(apiUrl . tg_token . '/sendDocument');
