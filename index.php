@@ -30,7 +30,7 @@ prv(json_decode($lastUpdates, true));
 
 $arrayQuery = array(
 	'chat_id' => tg_user_id,
-	'caption' => 'Проверка работы',
+	'caption' => 'Проверка работоспособности отправки файлов',
 	//  'photo' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg' , 'diplom.jpg')
 	'document' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg', 'diplom.jpg')
 );
