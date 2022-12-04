@@ -20,31 +20,7 @@ define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 define("tg_group_id", -881391231);
 define("apiUrl", "https://api.telegram.org/bot");
 define("botUrl", "https://bot.mikalay.tech/index.php");
-// Формируем массив с параметрами запроса на установку хука
-$getQuery = array(
-   "url" => botUrl,
-);
-// формируем сам запрос на установку хука с поощью curl
-$ch = curl_init(apiUrl . tg_token . "/setWebhook?" . http_build_query($getQuery));
-// Прописываем параметры curl
 
-// Чтобы curl не выводил результат, а возвращал его
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// Запрещаем проверку ssl-сертификата удаленного сервера
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-// Исключаем из результата заголовки
-curl_setopt($ch, CURLOPT_HEADER, false);
-
-// Вызываем запрос
-$resultQuery = curl_exec($ch);
-
-// закрываем сессию
-curl_close($ch);
-
-// Красиво выводим результаты запроса об его успешности либо напротив
-prv($resultQuery);
 
 // Теперь давайте проверим работу нашего обработчика. Сообщения приходят POST-запросом, с типом application/json. Получить его в PHP можно следующим образом:
 // И тут снова наша замечательная функция file_get_contents. При помощи не менее замечательного папраметра php://input мы можем отлавливать любые запросы: "PUT", "DELETE", etc. В данном случае сообщения боту приходят POST-запросом, что указано выше
@@ -60,13 +36,24 @@ prv($resultQuery);
 
 // Для записи строки будем использовать дополнительную, самописную функцию writeLogFile()
 // функция принимает 2 параметра: первый параметр, строка для записи. В нашем случае это JSON строка. второй параметр используется для очистки файла и перезаписи. Если данный параметр имеет значение false, то в файл дописывается информация.
-
+function writeLogFile($string, $clear = false)
+{
+   $log_file_name = __DIR__ . "/message.txt";
+   if ($clear == false) {
+      $now = date("Y-m-d H:i:s");
+      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+   } else {
+      $now = date("Y-m-d H:i:s");
+      file_put_contents($log_file_name, '');
+      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+   }
+}
 // Теперь отлавливаем данные
-// $data = file_get_contents('php://input');
+$data = file_get_contents('php://input');
 // И сразу записываем полученные данные в файл
-// writeLogFile($data, true);
+writeLogFile($data, true);
 // И только теперь, уже из файла, выведем полученную информацию на страницу
-// echo file_get_contents(__DIR__ . "/message.txt");
+echo file_get_contents(__DIR__ . "/message.txt");
 
 
 
