@@ -30,12 +30,12 @@ prv(json_decode($lastUpdates, true));
 
 $arrayQuery = array(
 	'chat_id' => tg_user_id,
-	'caption' => 'Проверка работоспособности отправки файлов',
-	//  'photo' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg' , 'diplom.jpg')
-	'document' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg', 'diplom.jpg')
+	'caption' => 'Проверка работоспособности отправки фото еще раз',
+	'photo' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg', 'diplom.jpg')
+	// 'document' => curl_file_create(__DIR__ . '/diplom.jpg', 'image/jpg', 'diplom.jpg')
 );
-// $ch = curl_init(apiUrl . tg_token .'/sendPhoto');
-$ch = curl_init(apiUrl . tg_token . '/sendDocument');
+$ch = curl_init(apiUrl . tg_token . '/sendPhoto');
+// $ch = curl_init(apiUrl . tg_token . '/sendDocument');
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $arrayQuery);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
