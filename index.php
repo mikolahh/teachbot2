@@ -13,29 +13,30 @@ define("tg_user_id", "902636138");
 
 // В переменные $textMessage записывает текст сообщения, а в переменную $chatId записываем id чата.
 
-$data = file_get_contents('php://input');
+// $data = file_get_contents('php://input');
 
-$arrDataAnswer = json_decode($data, true);
-$textMessage = mb_strtolower($arrDataAnswer["message"]["text"]); // Перевод строки к нижнему регистру
-$chatId = $arrDataAnswer["message"]["chat"]["id"];
+// $arrDataAnswer = json_decode($data, true);
+// $textMessage = mb_strtolower($arrDataAnswer["message"]["text"]);
+// $chatId = $arrDataAnswer["message"]["chat"]["id"];
 
 // Массив для передачи параметров в сообщение
 $getQuery = array(
-	"chat_id" => tg_user_id,
-	"text" => $textMessage,
-	"reply_markup" => json_encode(
-		array(			
-			'inline_keyboard' => array(
-				array(array('text' => 'Действие1', 'callback_data' => 'do-1'), array('text' => 'Действие2', 'callback_data' => 'do-2')),
-				array(array('text' => 'Действие3', 'callback_data' => 'do-3'), array('text' => 'Действие4', 'callback_data' => 'do-4'))
-			),
-			'keyboard' => array(
-				array(array('text' => 'Start', 'callback_data' => '/start'), array('text' => 'Reserve', 'callback_data' => '/reserve'))				
-			)
+   "chat_id" => tg_user_id,
+   "text" => $textMessage,
+   "reply_markup" => json_encode(
+      array(
+         'inline_keyboard' => array(
+            array(array('text' => 'Действие1', 'callback_data' => 'do-1'), array('text' => 'Действие2', 'callback_data' => 'do-2')),
+            array(array('text' => 'Действие3', 'callback_data' => 'do-3'), array('text' => 'Действие4', 'callback_data' => 'do-4'))
+         ),
+         'keyboard' => array(
+            array(array('text' => 'Start', 'callback_data' => '/start'), array('text' => 'Reserve', 'callback_data' => '/reserve'))
+         )
 
-		)
-	)
+      )
+   )
 );
+tg_sendMessage($getQuery);
 
 
 
