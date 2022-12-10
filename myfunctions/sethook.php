@@ -1,5 +1,5 @@
 <?php 
-
+define("botUrl", "https://bot.mikalay.tech");
 // Формируем массив с параметрами запроса на установку хука
 $getQuery = array(
    "url" => botUrl,
