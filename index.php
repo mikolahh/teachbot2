@@ -30,11 +30,11 @@ $getQuery = array(
             array(array('text' => 'Действие3', 'callback_data' => 'do-3'), array('text' => 'Действие4', 'callback_data' => 'do-4'))
          ),*/
          'keyboard' => array(
-            array(array('text' => 'Start', 'callback_data' => '/start'), array('text' => 'Reserve', 'callback_data' => '/reserve'))
-         )
+            array(array('text' => 'Start', 'callback_data' => '/start')
+         	)
 
-      )
-   )
+      	)
+	)
 );
 tg_sendMessage($getQuery);
 
