@@ -26,16 +26,11 @@ $getQuery = array(
    "reply_markup" => json_encode(
       array(
          'inline_keyboard' => array(
-            array(array('text' => 'Действие1', 'callback_data' => 'do-1'), array('text' => 'Действие2', 'callback_data' => 'do-2')),
-            array(array('text' => 'Действие3', 'callback_data' => 'do-3'), array('text' => 'Действие4', 'callback_data' => 'do-4'))
+            array(array('text' => 'Действие1', 'callback_data' => 'do-1')),
+            array(array('text' => 'Действие2', 'callback_data' => 'do-2'))
          )
-
-
       )
    )
 );
 tg_sendMessage($getQuery);
-
-
-
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
