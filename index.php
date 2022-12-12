@@ -25,34 +25,18 @@ $getQuery = array(
    "text" => "Сообщение",
    "reply_markup" => json_encode(
       array(
-         'inline_keyboard' => array(
+         /*'inline_keyboard' => array(
             array(array('text' => 'Действие1', 'callback_data' => 'do-1'), array('text' => 'Действие2', 'callback_data' => 'do-2')),
             array(array('text' => 'Действие3', 'callback_data' => 'do-3'), array('text' => 'Действие4', 'callback_data' => 'do-4'))
-         ),
-         /*'keyboard' => array(
+         ),*/
+         'keyboard' => array(
             array(array('text' => 'Start', 'callback_data' => '/start'), array('text' => 'Reserve', 'callback_data' => '/reserve'))
-         )*/
+         )
 
       )
    )
 );
 tg_sendMessage($getQuery);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
