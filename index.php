@@ -53,7 +53,7 @@ require_once "myfunctions/delete_hook.php";
 // writeLogFile($data, true);
 // $res = setMyHook();
 // prv($res);
-require "myfunctions/write_log";
+require "myfunctions/write_log.php";
 writeLogFile("hello mikola", true);
 // deleteMyHook();
 
