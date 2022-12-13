@@ -23,10 +23,10 @@ define("tg_user_id", "902636138");
 // Массив для передачи параметров в сообщение
 $getQuery = array(
    "chat_id" => tg_user_id,
-   "text" => "Отправляю репли-клавиатуру себе",
+   "text" => "Отправляю инлайн-клавиатуру себе",
    "reply_markup" => json_encode(
       array(
-         'keyboard' => array(
+         'inline_keyboard' => array(
             array(array('text' => 'Действие1', 'callback_data' => 'do-1')),
             array(array('text' => 'Действие2', 'callback_data' => 'do-2'))
          ),
