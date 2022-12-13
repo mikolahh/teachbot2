@@ -31,6 +31,7 @@ $getQuery = array(
             array(array('text' => 'Действие2', 'callback_data' => 'do-2'))
          ),
          'one_time_keyboard' => true,
+         'resize_keyboard' => true,
       )
    )
 );
