@@ -53,7 +53,7 @@ require_once "myfunctions/delete_hook.php";
 // writeLogFile($data, true);
 $res = setMyHook();
 prv($res);
-writeLogFile($res);
+writeLogFile($res, true);
 // deleteMyHook();
 
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
