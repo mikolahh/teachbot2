@@ -5,6 +5,7 @@ require_once "myfunctions/list_files.php";
 require_once "myfunctions/prv.php";
 require_once "myfunctions/send_message.php";
 require_once "myfunctions/send_photo.php";
+require_once "myfunctions/write_log.php";
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 define("tg_user_id", "902636138");
 // define("tg_user_id", "-881391231");
