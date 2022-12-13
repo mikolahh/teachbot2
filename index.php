@@ -32,7 +32,7 @@ $getQuery = array(
          ),
          // 'one_time_keyboard' => true,
          // 'resize_keyboard' => true,
-         // 'input_field_placeholder' => '',
+         'input_field_placeholder' => 'fffffffffffffffffffff',
       )
    )
 );
