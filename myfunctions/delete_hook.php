@@ -1,5 +1,5 @@
 <?php
-function setMyHook($botUrl = "https://bot.mikalay.tech")
+function deleteMyHook($botUrl = "https://bot.mikalay.tech")
 {
    // Формируем массив с параметрами запроса на установку хука
    $getQuery = array(

@@ -50,5 +50,6 @@ require_once "myfunctions/set_hook.php";
 // $data = json_decode($data, true);
 // prv($data);
 // writeLogFile($data, true);
-setMyHook();
+// setMyHook();
+deleteMyHook();
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
