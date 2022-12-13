@@ -42,7 +42,7 @@ $getQuery = array(
 // $res = tg_sendMessage($getQuery);
 // prv(json_decode($res));
 $data = file_get_contents('php://input');
-$data = json_decode($data, true);
-prv($data);
-writeLogFile($data);
+// $data = json_decode($data, true);
+// prv($data);
+writeLogFile($data, true);
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
