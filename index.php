@@ -34,5 +34,5 @@ $getQuery = array(
 );
 
 $res = tg_sendMessage($getQuery);
-prv($res);
+prv(json_decode($res);
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
