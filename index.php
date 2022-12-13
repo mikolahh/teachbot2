@@ -48,7 +48,7 @@ require_once "myfunctions/delete_hook.php";
 // $res = tg_sendMessage($getQuery);
 // prv(json_decode($res));
 $data = file_get_contents('php://input');
-$data = json_decode($data, true);
+// $data = json_decode($data, true);
 // prv($data);
 writeLogFile($data, true);
 
