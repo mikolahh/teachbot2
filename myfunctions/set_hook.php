@@ -20,11 +20,8 @@ function setMyHook($botUrl = "https://bot.mikalay.tech")
 
    // Вызываем запрос
    $resultQuery = curl_exec($ch);
+   return $resultQuery;
 
    // закрываем сессию
    curl_close($ch);
-
-   // Красиво выводим результаты запроса об его успешности либо напротив
-   prv($resultQuery);
-   writeLogFile($resultQuery, true);
 }
