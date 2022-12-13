@@ -23,10 +23,10 @@ define("tg_user_id", "902636138");
 // Массив для передачи параметров в сообщение
 $getQuery = array(
    "chat_id" => tg_user_id,
-   "text" => "Отправляю инлайн-клавиатуру себе",
+   "text" => "Отправляю репли-клавиатуру себе",
    "reply_markup" => json_encode(
       array(
-         'inline_keyboard' => array(
+         'keyboard' => array(
             array(array('text' => 'Действие1', 'callback_data' => 'do-1')),
             array(array('text' => 'Действие2', 'callback_data' => 'do-2'))
          ),
@@ -39,6 +39,10 @@ $getQuery = array(
 // Можно просто использовать file_get_contents вместо curl
 // $res = file_get_contents("https://api.telegram.org/bot" . tg_token . "/sendMessage?" . http_build_query($getQuery));
 // но мы будем пользоваться curl, так как потом все равно без нее не обойдемся
-$res = tg_sendMessage($getQuery);
-prv(json_decode($res));
+// $res = tg_sendMessage($getQuery);
+// prv(json_decode($res));
+$data = file_get_contents('php://input');
+$data = json_decode($data, true);
+prv($data);
+
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
