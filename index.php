@@ -9,7 +9,7 @@ require_once "myfunctions/list_files.php";
 require_once "myfunctions/prv.php";
 require_once "myfunctions/send_message.php";
 require_once "myfunctions/send_photo.php";
-require "myfunctions/write_log.php";
+
 require_once "myfunctions/set_hook.php";
 require_once "myfunctions/delete_hook.php";
 
@@ -53,8 +53,8 @@ require_once "myfunctions/delete_hook.php";
 // writeLogFile($data, true);
 // $res = setMyHook();
 // prv($res);
-
-writeLogFile("fffffffffffffffffff", true);
+require "myfunctions/write_log";
+writeLogFile("hello mikola", true);
 // deleteMyHook();
 
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
