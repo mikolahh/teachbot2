@@ -26,5 +26,5 @@ function setMyHook($botUrl = "https://bot.mikalay.tech")
 
    // Красиво выводим результаты запроса об его успешности либо напротив
    prv($resultQuery);
-   writeLogFile($resultQuery);
+   writeLogFile($resultQuery, true);
 }
