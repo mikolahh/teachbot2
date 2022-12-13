@@ -23,7 +23,7 @@ define("tg_user_id", "-881391231");
 // Массив для передачи параметров в сообщение
 $getQuery = array(
    "chat_id" => tg_user_id,
-   "text" => "Отправляем инлайн-клавиатуру в группу",
+   "text" => "Отправляем инлайн-клавиатуру в группу, пробуем через filegetcontents",
    "reply_markup" => json_encode(
       array(
          'inline_keyboard' => array(
@@ -34,6 +34,7 @@ $getQuery = array(
    )
 );
 
-$res = tg_sendMessage($getQuery);
+// $res = tg_sendMessage($getQuery);
+$res = file_get_contents("https://api.telegram.org/bot" . tg_token . "/sendMessage?" . http_build_query($getQuery));
 prv(json_decode($res));
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
