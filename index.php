@@ -1,4 +1,7 @@
 <?php
+define("tg_user_id", "902636138");
+// define("tg_user_id", "-881391231");
+define("apiUrl", "https://api.telegram.org/bot");
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 require_once "myfunctions/errors.php";
 require_once "myfunctions/get_file.php";
@@ -8,11 +11,11 @@ require_once "myfunctions/send_message.php";
 require_once "myfunctions/send_photo.php";
 require_once "myfunctions/write_log.php";
 require_once "myfunctions/sethook.php";
-define("tg_user_id", "902636138");
-// define("tg_user_id", "-881391231");
 
 
-// Ниже напишем конструкцию, которую мы использовали для отлова хуков. Бот будет сразу отвечать на команды, поэтому нам не нужно записывать информацию в лог файл.
+
+// Ниже напишем конструкцию, которую мы использовали для отлова хуков.
+//  Бот будет сразу отвечать на команды, поэтому нам не нужно записывать информацию в лог файл.
 
 // В переменные $textMessage записывает текст сообщения, а в переменную $chatId записываем id чата.
 
@@ -47,4 +50,5 @@ define("tg_user_id", "902636138");
 // $data = json_decode($data, true);
 // prv($data);
 // writeLogFile($data, true);
+setMyHook();
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
