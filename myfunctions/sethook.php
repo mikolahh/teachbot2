@@ -6,7 +6,7 @@ $getQuery = array(
    "url" => botUrl,
 );
 // формируем сам запрос на установку хука с поощью curl
-$ch = curl_init(apiUrl . tg_token . "/deleteWebhook?" . http_build_query($getQuery));
+$ch = curl_init(apiUrl . tg_token . "/setWebhook?" . http_build_query($getQuery));
 // Прописываем параметры curl
 
 // Чтобы curl не выводил результат, а возвращал его
@@ -26,3 +26,4 @@ curl_close($ch);
 
 // Красиво выводим результаты запроса об его успешности либо напротив
 prv($resultQuery);
+writeLogFile($resultQuery);
