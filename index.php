@@ -9,7 +9,7 @@ require_once "myfunctions/list_files.php";
 require_once "myfunctions/prv.php";
 require_once "myfunctions/send_message.php";
 require_once "myfunctions/send_photo.php";
-require_once "myfunctions/write_log.php";
+// require_once "myfunctions/write_log.php";
 require_once "myfunctions/set_hook.php";
 require_once "myfunctions/delete_hook.php";
 
@@ -53,6 +53,17 @@ require_once "myfunctions/delete_hook.php";
 // writeLogFile($data, true);
 // $res = setMyHook();
 // prv($res);
+function writeLogFile($string, $clear = false)
+{
+   $log_file_name = __DIR__ . "/message.txt";
+   $now = date("Y-m-d H:i:s");
+   if ($clear == false) {
+      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+   } else {
+      file_put_contents($log_file_name, '');
+      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
+   }
+}
 writeLogFile("rrrrrrrrrrrrrrrrrr", true);
 // deleteMyHook();
 
