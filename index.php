@@ -6,8 +6,8 @@ require_once "myfunctions/prv.php";
 require_once "myfunctions/send_message.php";
 require_once "myfunctions/send_photo.php";
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
-define("tg_user_id", "902636138");
-// define("tg_user_id", "-881391231");
+// define("tg_user_id", "902636138");
+define("tg_user_id", "-881391231");
 
 
 // Ниже напишем конструкцию, которую мы использовали для отлова хуков. Бот будет сразу отвечать на команды, поэтому нам не нужно записывать информацию в лог файл.
@@ -23,7 +23,7 @@ define("tg_user_id", "902636138");
 // Массив для передачи параметров в сообщение
 $getQuery = array(
    "chat_id" => tg_user_id,
-   "text" => "Отправляем инлайн-клавиатуру в группу, пробуем через filegetcontents",
+   "text" => "Отправляю репли-клавматуру себе",
    "reply_markup" => json_encode(
       array(
          'keyboard' => array(
@@ -32,14 +32,10 @@ $getQuery = array(
          ),
          // 'one_time_keyboard' => true,
          // 'resize_keyboard' => true,
-         'input_field_placeholder' => 'fffffffffffffffffffff',
       )
    )
 );
-$data = file_get_contents('php://input');
-prv(json_decode($data));
-writeLogFile($data, true);
 
-
-
+$res = tg_sendMessage($getQuery);
+prv(json_decode($res));
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
