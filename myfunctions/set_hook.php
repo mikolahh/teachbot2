@@ -3,7 +3,7 @@ function setMyHook($botUrl = "https://bot.mikalay.tech")
 {
    // Формируем массив с параметрами запроса на установку хука
    $getQuery = array(
-      "url" => botUrl,
+      "url" => $botUrl,
    );
    // формируем сам запрос на установку хука с поощью curl
    $ch = curl_init(apiUrl . tg_token . "/setWebhook?" . http_build_query($getQuery));
