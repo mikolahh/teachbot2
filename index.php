@@ -51,6 +51,8 @@ require_once "myfunctions/delete_hook.php";
 // $data = json_decode($data, true);
 // prv($data);
 // writeLogFile($data, true);
-// setMyHook();
-deleteMyHook();
+$res = setMyHook();
+writeLogFile($res);
+// deleteMyHook();
+
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
