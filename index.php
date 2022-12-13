@@ -53,8 +53,8 @@ require_once "myfunctions/delete_hook.php";
 // writeLogFile($data, true);
 // $res = setMyHook();
 // prv($res);
-// require "myfunctions/write_log.php";
-function writeLogFile($string, $clear = false)
+include "myfunctions/write_log.php";
+/* function writeLogFile($string, $clear = false)
 {
    $log_file_name = __DIR__ . "/message.txt";
    $now = date("Y-m-d H:i:s");
@@ -64,7 +64,7 @@ function writeLogFile($string, $clear = false)
       file_put_contents($log_file_name, '');
       file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
    }
-}
+} */
 writeLogFile("hello mikola", true);
 // deleteMyHook();
 
