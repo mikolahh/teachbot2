@@ -1,4 +1,5 @@
-<?php 
+<?php
+define("apiUrl", "https://api.telegram.org/bot");
 define("botUrl", "https://bot.mikalay.tech");
 // Формируем массив с параметрами запроса на установку хука
 $getQuery = array(
