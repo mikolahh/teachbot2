@@ -47,25 +47,15 @@ require_once "myfunctions/delete_hook.php";
 // но мы будем пользоваться curl, так как потом все равно без нее не обойдемся
 // $res = tg_sendMessage($getQuery);
 // prv(json_decode($res));
-// $data = file_get_contents('php://input');
-// $data = json_decode($data, true);
+$data = file_get_contents('php://input');
+$data = json_decode($data, true);
 // prv($data);
-// writeLogFile($data, true);
-// $res = setMyHook();
-// prv($res);
+writeLogFile($data, true);
 
-/* function writeLogFile($string, $clear = false)
-{
-   $log_file_name = __DIR__ . "/message.txt";
-   $now = date("Y-m-d H:i:s");
-   if ($clear == false) {
-      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
-   } else {
-      file_put_contents($log_file_name, '');
-      file_put_contents($log_file_name, $now . " " . print_r($string, true) . "\r\n", FILE_APPEND);
-   }
-} */
-writeLogFile("hello mikola", true);
-// deleteMyHook();
+
+
+
+
+
 
 // ssh mikalayt@vh116.hoster.by -p 22   ew8nieKo
