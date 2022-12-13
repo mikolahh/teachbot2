@@ -7,6 +7,7 @@ require_once "myfunctions/prv.php";
 require_once "myfunctions/send_message.php";
 require_once "myfunctions/send_photo.php";
 require_once "myfunctions/write_log.php";
+require_once "myfunctions/sethook.php";
 define("tg_user_id", "902636138");
 // define("tg_user_id", "-881391231");
 
