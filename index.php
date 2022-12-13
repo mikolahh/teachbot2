@@ -26,7 +26,7 @@ $getQuery = array(
    "text" => "Отправляем инлайн-клавиатуру в группу, пробуем через filegetcontents",
    "reply_markup" => json_encode(
       array(
-         'inline_keyboard' => array(
+         'keyboard' => array(
             array(array('text' => 'Действие1', 'callback_data' => 'do-1')),
             array(array('text' => 'Действие2', 'callback_data' => 'do-2'))
          )
