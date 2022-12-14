@@ -1,7 +1,7 @@
 <?php
 function writeLogFile($string, $clear = false)
 {
-    $log_file_name = __DIR__ . "/message.txt";
+    $log_file_name = "/message.txt";
     prv($log_file_name);
     $now = date("Y-m-d H:i:s");
     if ($clear == false) {
