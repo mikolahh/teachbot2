@@ -47,7 +47,7 @@ require_once "myfunctions/delete_hook.php";
 // но мы будем пользоваться curl, так как потом все равно без нее не обойдемся
 // $res = tg_sendMessage($getQuery);
 // prv(json_decode($res));
-function writeLogFile($string, $clear = false)
+function writeLogFile($string, $clear)
 {
    $log_file_name = __DIR__ . "/message.txt";
    $now = date("Y-m-d H:i:s");
