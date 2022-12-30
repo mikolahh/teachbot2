@@ -51,6 +51,8 @@ $data = file_get_contents('php://input');
 // $data = json_decode($data, true);
 // prv($data);
 writeLogFile($data, true);
+echo file_get_contents('myfunctions/message.txt');
+
 
 
 
