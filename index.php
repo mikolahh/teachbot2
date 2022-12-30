@@ -52,7 +52,7 @@ $data = file_get_contents('php://input');
 $data = json_decode($data, true);
 
 writeLogFile($data, false);
-prv(file_get_contents('myfunctions/message.txt'));
+prv(file_get_contents('message.txt'));
 
 
 
