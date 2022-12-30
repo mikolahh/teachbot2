@@ -31,13 +31,13 @@ require_once "myfunctions/delete_hook.php";
 // Массив для передачи параметров в сообщение
 $getQuery = array(
    "chat_id" => tg_group_id,
-   "text" => "Отправляю инлайн-клавиатуру в свою группу просто с помощью file_get_contents без использования curl",
+   "text" => "Отправляю еще одну инлайн-клавиатуру в свою группу просто с помощью curl",
    "reply_markup" => json_encode(
       array(
          'inline_keyboard' => array(
             array(
-               array('text' => 'Действие1', 'callback_data' => 'do-1'),
-               array('text' => 'Действие2', 'callback_data' => 'do-2')
+               array('text' => 'Действие3', 'callback_data' => 'do-3'),
+               array('text' => 'Действие4', 'callback_data' => 'do-4')
             )
          )
       )
@@ -45,11 +45,11 @@ $getQuery = array(
 );
 
 // Можно просто использовать file_get_contents вместо curl
-$res = file_get_contents("https://api.telegram.org/bot" . tg_token . "/sendMessage?" . http_build_query($getQuery));
-prv(json_decode($res));
-// но мы будем пользоваться curl, так как потом все равно без нее не обойдемся
-// $res = tg_sendMessage($getQuery);
+// $res = file_get_contents("https://api.telegram.org/bot" . tg_token . "/sendMessage?" . http_build_query($getQuery));
 // prv(json_decode($res));
+// но мы будем пользоваться curl, так как потом все равно без нее не обойдемся
+$res = tg_sendMessage($getQuery);
+prv(json_decode($res));
 
 // $data = file_get_contents('php://input');
 // $data = json_decode($data, true);
