@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // Функция для красивого вывода переменных на экран
 function prv($var)
@@ -11,9 +11,3 @@ function prv($var)
 	$int++;
 	echo '<br><br><br>';
 }
-
-
-
-
-
- 
