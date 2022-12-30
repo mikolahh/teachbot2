@@ -63,7 +63,7 @@ $data = file_get_contents('php://input');
 $data = json_decode($data, true);
 
 writeLogFile($data, false);
-echo file_get_contents('myfunctions/message.txt');
+echo file_get_contents('message.txt');
 
 
 
