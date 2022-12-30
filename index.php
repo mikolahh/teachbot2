@@ -1,6 +1,8 @@
 <?php
+// Определяем id меня
 define("tg_user_id", "902636138");
-// define("tg_user_id", "-881391231");
+// Определяем id моей группы
+define("tg_group_id", "-881391231");
 define("apiUrl", "https://api.telegram.org/bot");
 define("tg_token", "5653090500:AAFR7_OQ6-d_I0A8t-uItzW17sEf3PTFiXg");
 require_once "myfunctions/errors.php";
@@ -27,32 +29,33 @@ require_once "myfunctions/delete_hook.php";
 // $chatId = $arrDataAnswer["message"]["chat"]["id"];
 
 // Массив для передачи параметров в сообщение
-/* $getQuery = array(
+$getQuery = array(
    "chat_id" => tg_user_id,
-   "text" => "Отправляю репли-клавиатуру себе",
+   "text" => "Отправляю инлайн-клавиатуру себе",
    "reply_markup" => json_encode(
       array(
-         'keyboard' => array(
-            array(array('text' => 'Действие1', 'callback_data' => 'do-1')),
-            array(array('text' => 'Действие2', 'callback_data' => 'do-2'))
-         ),
-         'one_time_keyboard' => true,
-         'resize_keyboard' => true,
+         'inline_keyboard' => array(
+            array(
+               array('text' => 'Действие1', 'callback_data' => 'do-1'),
+               array('text' => 'Действие2', 'callback_data' => 'do-2')
+            )
+         )
       )
    )
-); */
+);
 
 // Можно просто использовать file_get_contents вместо curl
-// $res = file_get_contents("https://api.telegram.org/bot" . tg_token . "/sendMessage?" . http_build_query($getQuery));
+$res = file_get_contents("https://api.telegram.org/bot" . tg_token . "/sendMessage?" . http_build_query($getQuery));
+prv($res);
 // но мы будем пользоваться curl, так как потом все равно без нее не обойдемся
 // $res = tg_sendMessage($getQuery);
 // prv(json_decode($res));
 
-$data = file_get_contents('php://input');
-$data = json_decode($data, true);
+// $data = file_get_contents('php://input');
+// $data = json_decode($data, true);
 
-writeLogFile($data, true);
-prv(file_get_contents('message.txt'));
+// writeLogFile($data, true);
+// prv(file_get_contents('message.txt'));
 
 
 
