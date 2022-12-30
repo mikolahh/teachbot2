@@ -51,7 +51,7 @@ require_once "myfunctions/delete_hook.php";
 $data = file_get_contents('php://input');
 $data = json_decode($data, true);
 
-writeLogFile($data, false);
+writeLogFile($data, true);
 prv(file_get_contents('message.txt'));
 
 
