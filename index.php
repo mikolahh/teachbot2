@@ -52,7 +52,7 @@ function writeLogFile($string, $clear)
    $log_file_name = __DIR__ . "/message.txt";
    $now = date("Y-m-d H:i:s");
    $data = $string;
-   if ($clear === false) {
+   if ($clear == false) {
       file_put_contents($log_file_name, $now . " " . print_r($data, true) . "\r\n", FILE_APPEND);
    } else {
       file_put_contents($log_file_name, '');
@@ -60,7 +60,7 @@ function writeLogFile($string, $clear)
    }
 }
 $data = file_get_contents('php://input');
-$data = json_decode($data, true);
+$data = json_decode($data, false);
 
 writeLogFile($data, false);
 echo file_get_contents('myfunctions/message.txt');
