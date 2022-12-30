@@ -30,8 +30,8 @@ require_once "myfunctions/delete_hook.php";
 
 // Массив для передачи параметров в сообщение
 $getQuery = array(
-   "chat_id" => tg_user_id,
-   "text" => "Отправляю инлайн-клавиатуру себе просто с помощью file_get_contents без использования curl",
+   "chat_id" => tg_group_id,
+   "text" => "Отправляю инлайн-клавиатуру в свою группу просто с помощью file_get_contents без использования curl",
    "reply_markup" => json_encode(
       array(
          'inline_keyboard' => array(
