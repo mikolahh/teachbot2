@@ -46,7 +46,7 @@ $getQuery = array(
 
 // Можно просто использовать file_get_contents вместо curl
 $res = file_get_contents("https://api.telegram.org/bot" . tg_token . "/sendMessage?" . http_build_query($getQuery));
-prv($res);
+prv(json_encode($res));
 // но мы будем пользоваться curl, так как потом все равно без нее не обойдемся
 // $res = tg_sendMessage($getQuery);
 // prv(json_decode($res));
